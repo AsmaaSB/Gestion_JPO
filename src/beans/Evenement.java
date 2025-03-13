@@ -14,18 +14,18 @@ import java.util.List;
 import java.util.ArrayList;
 
 
-public class evenement {
+public class Evenement {
     private int id;
     private String nom;
     private Date date;
     private String lieu;
     private List<Participant> participants;
     
-    public evenement() {
+    public Evenement() {
         this.participants = new ArrayList<>();
     }
     
-    public evenement(int id, String nom, Date date, String lieu) {
+    public Evenement(int id, String nom, Date date, String lieu) {
         this.id = id;
         this.nom = nom;
         this.date = date;
@@ -33,7 +33,7 @@ public class evenement {
         this.participants = new ArrayList<>();
     }
     
-    // Getters et Setters
+  
     public int getId() {
         return id;
     }

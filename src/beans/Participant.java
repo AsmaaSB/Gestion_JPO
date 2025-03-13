@@ -17,7 +17,7 @@ public class Participant {
     private String nom;
     private String prenom;
     private String email;
-    private List<evenement> evenements;
+    private List<Evenement> evenements;
     
     public Participant() {
         this.evenements = new ArrayList<>();
@@ -63,15 +63,15 @@ public class Participant {
         this.email = email;
     }
     
-    public List<evenement> getEvenements() {
+    public List<Evenement> getEvenements() {
         return evenements;
     }
     
-    public void setEvenements(List<evenement> evenements) {
+    public void setEvenements(List<Evenement> evenements) {
         this.evenements = evenements;
     }
     
-    public void addEvenement(evenement evenement) {
+    public void addEvenement(Evenement evenement) {
         if (!this.evenements.contains(evenement)) {
             this.evenements.add(evenement);
         }

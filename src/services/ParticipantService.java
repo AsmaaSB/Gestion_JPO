@@ -69,7 +69,7 @@ public class ParticipantService implements IDao<Participant> {
             Statement st = connexion.getCn().createStatement();
             ResultSet rs = st.executeQuery(req);
             if (rs.next()) {
-                return new Participant(rs.getInt("id"), rs.getString("nom"), rs.getString("email"));
+                return new Participant(rs.getInt("id"), rs.getString("nom"), rs.getString("email"), rs.getString("lieu"));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -85,7 +85,7 @@ public class ParticipantService implements IDao<Participant> {
             Statement st = connexion.getCn().createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
-                participants.add(new Participant(rs.getInt("id"), rs.getString("nom"), rs.getString("email")));
+                participants.add(new Participant(rs.getInt("id"), rs.getString("nom"), rs.getString("email"), rs.getString("lieu")));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
