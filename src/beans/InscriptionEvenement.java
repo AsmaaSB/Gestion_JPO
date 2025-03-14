@@ -10,46 +10,37 @@ package beans;
  * @author PC
  */
 public class InscriptionEvenement {
-    private int id;
-    private int evenementId;
-    private int participantId;
+    private Evenement evenement;
+    private Participant participant;
     
     public InscriptionEvenement() {
     }
     
-    public InscriptionEvenement(int id, int evenementId, int participantId) {
-        this.id = id;
-        this.evenementId = evenementId;
-        this.participantId = participantId;
+    public InscriptionEvenement(Evenement evenement, Participant participant) {
+        this.evenement = evenement;
+        this.participant = participant;
     }
     
-    // Getters et Setters
-    public int getId() {
-        return id;
+    
+    
+    public Evenement getEvenement() {
+        return evenement;
     }
     
-    public void setId(int id) {
-        this.id = id;
+    public void setEvenement(Evenement evenement) {
+        this.evenement = evenement;
     }
     
-    public int getEvenementId() {
-        return evenementId;
+    public Participant getParticipant() {
+        return participant;
     }
     
-    public void setEvenementId(int evenementId) {
-        this.evenementId = evenementId;
-    }
-    
-    public int getParticipantId() {
-        return participantId;
-    }
-    
-    public void setParticipantId(int participantId) {
-        this.participantId = participantId;
+    public void setParticipant(Participant participant) {
+        this.participant = participant;
     }
     
     @Override
     public String toString() {
-        return "InscriptionEvenement [id=" + id + ", evenementId=" + evenementId + ", participantId=" + participantId + "]";
+        return "InscriptionEvenement [evenementId=" + evenement + ", participantId=" + participant + "]";
     }
 }

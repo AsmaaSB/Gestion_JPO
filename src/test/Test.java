@@ -4,7 +4,6 @@
  * and open the template in the editor.
  */
 package test;
-
 /**
  *
  * @author PC
@@ -24,7 +23,7 @@ public class Test {
         EvenementService evenementService = new EvenementService();
         ParticipantService participantService = new ParticipantService();
         InscriptionEvenementService inscriptionEvenementService = new InscriptionEvenementService();
-
+        
         java.sql.Date sqlDate1 = java.sql.Date.valueOf("2025-04-04");
         java.sql.Date sqlDate2 = java.sql.Date.valueOf("2025-05-10");
         
@@ -34,52 +33,65 @@ public class Test {
         evenementService.create(event1);
         evenementService.create(event2);
         
-
         Participant participant1 = new Participant(0, "Ali", "Abdo", "aliabdooo@email.com");
         Participant participant2 = new Participant(0, "Jamila","Arabi" , "jamilaarabi22@email.com");
-
         participantService.create(participant1);
         participantService.create(participant2);
-
+        
         System.out.println("===== Liste des événements =====");
         List<Evenement> evenements = evenementService.findAll();
         for (Evenement e : evenements) {
             System.out.println(e.getId() + " - " + e.getNom() + " - " + e.getDate());
         }
-
+        
         System.out.println("===== Liste des participants =====");
         List<Participant> participants = participantService.findAll();
         for (Participant p : participants) {
             System.out.println(p.getId() + " - " + p.getNom() + " - " + p.getEmail());
         }
-
+        
         if (!evenements.isEmpty() && !participants.isEmpty()) {
-            int eventId = evenements.get(0).getId();
-            int participantId = participants.get(0).getId();
+            Evenement firstEvent = evenements.get(0);
+            Participant firstParticipant = participants.get(0);
             
-            InscriptionEvenement inscription1 = new InscriptionEvenement(0, eventId, participantId);
+            InscriptionEvenement inscription1 = new InscriptionEvenement(firstEvent, firstParticipant);
             inscriptionEvenementService.create(inscription1);
         }
-
+        
         System.out.println("===== Liste des inscriptions =====");
         List<InscriptionEvenement> inscriptions = inscriptionEvenementService.findAll();
         for (InscriptionEvenement i : inscriptions) {
-            System.out.println("Inscription ID: " + i.getId() + " - Événement ID: " + i.getEvenementId() + " - Participant ID: " + i.getParticipantId());
+            System.out.println("Événement: " + i.getEvenement().getNom() + 
+                               " - Participant: " + i.getParticipant().getNom() + 
+                               " " + i.getParticipant().getPrenom());
         }
-
+        
         if (!participants.isEmpty()) {
             Participant p = participants.get(0);
-            p.setNom("Alice Martin");
+            p.setNom("Leila Noor");
             participantService.update(p);
         }
-
+        
         if (!evenements.isEmpty()) {
             evenementService.delete(evenements.get(0));
         }
-
+        
         System.out.println("===== Après modifications =====");
-        System.out.println("Participants : " + participantService.findAll());
-        System.out.println("Événements : " + evenementService.findAll());
-        System.out.println("Inscriptions : " + inscriptionEvenementService.findAll());
+        System.out.println("Participants : ");
+        for (Participant p : participantService.findAll()) {
+            System.out.println(p.getId() + " - " + p.getNom() + " - " + p.getEmail());
+        }
+        
+        System.out.println("Événements : ");
+        for (Evenement e : evenementService.findAll()) {
+            System.out.println(e.getId() + " - " + e.getNom() + " - " + e.getDate());
+        }
+        
+        System.out.println("Inscriptions : ");
+        for (InscriptionEvenement i : inscriptionEvenementService.findAll()) {
+            System.out.println("Événement: " + i.getEvenement().getNom() + 
+                               " - Participant: " + i.getParticipant().getNom() + 
+                               " " + i.getParticipant().getPrenom());
+        }
     }
 }
