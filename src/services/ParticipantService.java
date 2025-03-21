@@ -9,6 +9,7 @@ package services;
  *
  * @author PC
  */
+import beans.Evenement;
 import dao.IDao;
 import beans.Participant;
 import connexion.Connexion;
@@ -17,23 +18,35 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ParticipantService implements IDao<Participant> {
+
     private Connexion connexion;
+    private Participant p;
+    private EvenementService es;
 
     public ParticipantService() {
         connexion = Connexion.getInstance();
+        es = new EvenementService();
     }
 
     @Override
     public boolean create(Participant o) {
-        String req = "INSERT INTO participant VALUES (NULL, '" + o.getNom() + "', '" + o.getEmail() + "')";
+        if (o == null || o.getEmail() == null) {
+            return false;
+        }
+        String req = "INSERT INTO Participant (id, nom, prenom, email) VALUES (NULL, ?, ?, ?)";
         try {
-            Statement st = connexion.getCn().createStatement();
-            st.executeUpdate(req);
+            PreparedStatement ps = connexion.getCn().prepareStatement(req);
+            ps.setString(1, o.getNom());
+            ps.setString(2, o.getPrenom());
+            ps.setString(3, o.getEmail());
+            System.out.println("In create method, email: " + o.getEmail()); // Changed p to o
+            ps.executeUpdate();
             return true;
         } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+            System.out.println(ex.getMessage()); // This is good - prints SQL errors
+            return false;
         }
-        return false;
+        // This will never be reached because of the return statements in the try/catch
     }
 
     @Override
@@ -69,14 +82,14 @@ public class ParticipantService implements IDao<Participant> {
             Statement st = connexion.getCn().createStatement();
             ResultSet rs = st.executeQuery(req);
             if (rs.next()) {
-                return new Participant(rs.getInt("id"), rs.getString("nom"), rs.getString("email"), rs.getString("lieu"));
+                return new Participant(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email"));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
         return null;
     }
-
+    
     @Override
     public List<Participant> findAll() {
         List<Participant> participants = new ArrayList<>();
@@ -85,11 +98,15 @@ public class ParticipantService implements IDao<Participant> {
             Statement st = connexion.getCn().createStatement();
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
-                participants.add(new Participant(rs.getInt("id"), rs.getString("nom"), rs.getString("email"), rs.getString("lieu")));
+                participants.add(new Participant(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email")));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-        return participants;
+        return participants; 
+  }
+
+    public Iterable<Participant> findByEvenement(Evenement evenement) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }

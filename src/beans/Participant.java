@@ -11,6 +11,7 @@ package beans;
  */
 import java.util.List;
 import java.util.ArrayList;
+import java.util.Date;
 
 public class Participant {
     private int id;
@@ -28,8 +29,23 @@ public class Participant {
         this.nom = nom;
         this.prenom = prenom;
         this.email = email;
+        System.out.println("Participant constructor email: " + this.email);
         this.evenements = new ArrayList<>();
     }
+    
+    public Participant(String nom, String prenom, String email) {
+    System.out.println("Three-param constructor called with:");
+    System.out.println("nom: " + nom);
+    System.out.println("prenom: " + prenom);
+    System.out.println("email parameter: " + email);
+    
+    this.nom = nom;
+    this.prenom = prenom;
+    this.email = email;
+    
+    System.out.println("After assignment, this.email = " + this.email);
+    this.evenements = new ArrayList<>();
+}
     
     public int getId() {
         return id;
@@ -77,10 +93,7 @@ public class Participant {
         }
     }
     
-    @Override
-    public String toString() {
-        return "Participant [id=" + id + ", nom=" + nom + ", prenom=" + prenom + ", email=" + email + "]";
-    }
+    
     
     @Override
     public boolean equals(Object obj) {
@@ -89,5 +102,12 @@ public class Participant {
         Participant that = (Participant) obj;
         return id == that.id;
     }
+
+    @Override
+    public String toString() {
+        return nom + " " +prenom;
+    }
+    
+    
 }
 

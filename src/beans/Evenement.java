@@ -32,6 +32,13 @@ public class Evenement {
         this.lieu = lieu;
         this.participants = new ArrayList<>();
     }
+     public Evenement(String nom, Date date, String lieu) {
+        this.id = id;
+        this.nom = nom;
+        this.date = date;
+        this.lieu = lieu;
+        this.participants = new ArrayList<>();
+    }
     
   
     public int getId() {
@@ -82,6 +89,6 @@ public class Evenement {
     
     @Override
     public String toString() {
-        return "Evenement [id=" + id + ", nom=" + nom + ", date=" + date + ", lieu=" + lieu + "]";
+        return nom;
     }
 }

@@ -13,10 +13,12 @@ import dao.IDao;
 import beans.Evenement;
 import connexion.Connexion;
 import java.sql.*;
+import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.List;
 
 public class EvenementService implements IDao<Evenement> {
+
     private Connexion connexion;
 
     public EvenementService() {
@@ -25,10 +27,13 @@ public class EvenementService implements IDao<Evenement> {
 
     @Override
     public boolean create(Evenement o) {
-        String req = "INSERT INTO evenement VALUES (NULL, '" + o.getNom() + "', '" + o.getDate() + "')";
+        String req = "INSERT INTO Evenement (id ,nom, date, lieu) VALUES (NULL, ?, ?, ?)";
         try {
-            Statement st = connexion.getCn().createStatement();
-            st.executeUpdate(req);
+            PreparedStatement ps = connexion.getCn().prepareStatement(req);
+            ps.setString(1, o.getNom());
+            ps.setDate(2, new Date(o.getDate().getTime()));
+            ps.setString(3, o.getLieu());
+            ps.executeUpdate();
             return true;
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
@@ -51,13 +56,20 @@ public class EvenementService implements IDao<Evenement> {
 
     @Override
     public boolean update(Evenement o) {
-        String req = "UPDATE evenement SET nom = '" + o.getNom() + "', date = '" + o.getDate() + "' WHERE id = " + o.getId();
+        String req = "UPDATE evenement SET nom = ?, date = ?, lieu = ? WHERE id = ?";
         try {
-            Statement st = connexion.getCn().createStatement();
-            st.executeUpdate(req);
-            return true;
+            PreparedStatement ps = connexion.getCn().prepareStatement(req);
+            ps.setString(1, o.getNom());
+            ps.setDate(2, new java.sql.Date(o.getDate().getTime()));
+            ps.setString(3, o.getLieu());
+            ps.setInt(4, o.getId());
+
+            int rowsAffected = ps.executeUpdate();
+            System.out.println("Rows affected: " + rowsAffected);
+            return rowsAffected > 0;
         } catch (SQLException ex) {
-            System.out.println(ex.getMessage());
+            System.out.println("SQL Error: " + ex.getMessage());
+            ex.printStackTrace();
         }
         return false;
     }

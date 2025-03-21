@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/beans/Participant.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/services/ParticipantService.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/gui/MDIApplication.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/connexion/Connexion.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/gui/Main.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/gui/EvenementForm.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/dao/IDao.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/test/Test.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/services/InscriptionEvenementService.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/beans/Evenement.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/services/EvenementService.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/beans/User.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/beans/InscriptionEvenement.java</file>
+        </group>
+    </open-files>
+</project-private>
