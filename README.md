@@ -28,7 +28,8 @@ L'organisation régulière de journées portes ouvertes est une pratique courant
 <img width="555" alt="image" src="https://github.com/user-attachments/assets/260bdf16-bec3-401d-986f-975a11cb2bc0" />
 
 ## Diagramme de Classe :
-<img width="443" alt="image" src="https://github.com/user-attachments/assets/65c2d5a0-9950-4fe3-9d59-a7a48ec58259" />
+<img width="345" alt="image" src="https://github.com/user-attachments/assets/a9147595-5553-4a2f-8237-f1389be72271" />
+
 
 ## Script Base de données :
 ```bash
@@ -86,5 +87,11 @@ MySQL pour le stockage relationnel des données
 ### Outils de Développement
 NetBeans IDE pour le développement
 Git pour le contrôle de version 
+
+
+# Demo Video :
+
+https://github.com/user-attachments/assets/82c78875-415f-472c-84c4-7cb393122231
+
 
 
