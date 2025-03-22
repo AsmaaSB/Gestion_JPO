@@ -35,11 +35,33 @@ L'organisation régulière de journées portes ouvertes est une pratique courant
 ```bash
 CREATE DATABASE gestion_jpo; USE gestion_jpo;
 
-CREATE TABLE Evenement ( id INT AUTO_INCREMENT PRIMARY KEY, nom VARCHAR(255) NOT NULL, date DATE NOT NULL, lieu VARCHAR(255) NOT NULL );
+CREATE TABLE Evenement (
+id INT AUTO_INCREMENT PRIMARY KEY,
+nom VARCHAR(255) NOT NULL,
+date DATE NOT NULL,
+lieu VARCHAR(255) NOT NULL
+);
 
-CREATE TABLE Participant ( id INT AUTO_INCREMENT PRIMARY KEY, nom VARCHAR(100) NOT NULL, prenom VARCHAR(100) NOT NULL, email VARCHAR(100) NOT NULL UNIQUE );
+CREATE TABLE Participant (
+id INT AUTO_INCREMENT PRIMARY KEY,
+nom VARCHAR(100) NOT NULL,
+prenom VARCHAR(100) NOT NULL,
+email VARCHAR(100) NOT NULL UNIQUE
+);
 
-CREATE TABLE InscriptionEvenement ( id INT AUTO_INCREMENT PRIMARY KEY, evenement_id INT NOT NULL, participant_id INT NOT NULL, FOREIGN KEY (evenement_id) REFERENCES Evenement(id) ON DELETE CASCADE, FOREIGN KEY (participant_id) REFERENCES Participant(id) ON DELETE CASCADE, UNIQUE (evenement_id, participant_id) );
+CREATE TABLE InscriptionEvenement (
+id INT AUTO_INCREMENT PRIMARY KEY,
+evenement_id INT NOT NULL,
+participant_id INT NOT NULL,
+FOREIGN KEY (evenement_id) REFERENCES Evenement(id) ON DELETE CASCADE,
+FOREIGN KEY (participant_id) REFERENCES Participant(id) ON DELETE CASCADE,
+UNIQUE (evenement_id, participant_id) );
+
+CREATE TABLE user (
+    login VARCHAR(50) NOT NULL UNIQUE,
+    password VARCHAR(255) NOT NULL,
+);
+
 ```
 
 
@@ -68,6 +90,9 @@ Services implémentant les opérations CRUD
 ### Base de Données
 MySQL pour le stockage persistant des données
 
+<img width="554" alt="image" src="https://github.com/user-attachments/assets/b239e8a0-d1f8-43a5-acea-d69b2e119267" />
+
+
 ## Technologies :
 ### Langage de Programmation
 Java SE (Standard Edition)
@@ -91,6 +116,5 @@ Git pour le contrôle de version
 
 # Demo Video :
 
-
-
+https://github.com/user-attachments/assets/457ae7f4-a328-4dcd-afc0-9b8cf3355b68
 
