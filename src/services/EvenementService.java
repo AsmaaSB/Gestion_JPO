@@ -11,6 +11,7 @@ package services;
  */
 import dao.IDao;
 import beans.Evenement;
+import beans.Participant;
 import connexion.Connexion;
 import java.sql.*;
 import java.text.SimpleDateFormat;
@@ -98,6 +99,24 @@ public class EvenementService implements IDao<Evenement> {
             ResultSet rs = st.executeQuery(req);
             while (rs.next()) {
                 evenements.add(new Evenement(rs.getInt("id"), rs.getString("nom"), rs.getDate("date"), rs.getString("lieu")));
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return evenements;
+    }
+
+    public List<Evenement> findByParticipant(Participant participant) {
+       List<Evenement> evenements = new ArrayList<>();
+        String req = "SELECT e.* FROM Evenement e "
+                + "JOIN InscriptionEvenement ie ON e.id = ie.evenement_id "
+                + "WHERE ie.evenement_id = " + participant.getId();
+        try {
+            PreparedStatement ps = connexion.getCn().prepareStatement(req);
+            ps.setInt(1, participant.getId());
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                evenements.add(new Evenement(rs.getInt("id"), rs.getString("nom"), rs.getDate("date"), rs.getString("Lieu")));
             }
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());

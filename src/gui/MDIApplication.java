@@ -20,6 +20,8 @@ public class MDIApplication extends javax.swing.JFrame {
         this.setExtendedState(MAXIMIZED_BOTH);
     }
 
+
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -34,14 +36,16 @@ public class MDIApplication extends javax.swing.JFrame {
         fileMenu = new javax.swing.JMenu();
         evenementMenuItem = new javax.swing.JMenuItem();
         participantMenuItem = new javax.swing.JMenuItem();
+        lesInscriptions = new javax.swing.JMenuItem();
         editMenu = new javax.swing.JMenu();
         cutMenuItem = new javax.swing.JMenuItem();
         jMenuItem1 = new javax.swing.JMenuItem();
         helpMenu = new javax.swing.JMenu();
-        contentMenuItem = new javax.swing.JMenuItem();
-        aboutMenuItem = new javax.swing.JMenuItem();
+        statsMenuItem = new javax.swing.JMenuItem();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+
+        menuBar.setBackground(new java.awt.Color(255, 255, 255));
 
         fileMenu.setMnemonic('f');
         fileMenu.setText("Gestion");
@@ -63,6 +67,14 @@ public class MDIApplication extends javax.swing.JFrame {
             }
         });
         fileMenu.add(participantMenuItem);
+
+        lesInscriptions.setText("Les inscriptions");
+        lesInscriptions.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lesInscriptionsActionPerformed(evt);
+            }
+        });
+        fileMenu.add(lesInscriptions);
 
         menuBar.add(fileMenu);
 
@@ -89,15 +101,15 @@ public class MDIApplication extends javax.swing.JFrame {
         menuBar.add(editMenu);
 
         helpMenu.setMnemonic('h');
-        helpMenu.setText("Aide");
+        helpMenu.setText("Autre");
 
-        contentMenuItem.setMnemonic('c');
-        contentMenuItem.setText("Contents");
-        helpMenu.add(contentMenuItem);
-
-        aboutMenuItem.setMnemonic('a');
-        aboutMenuItem.setText("About");
-        helpMenu.add(aboutMenuItem);
+        statsMenuItem.setText("Statistiques");
+        statsMenuItem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                statsMenuItemActionPerformed(evt);
+            }
+        });
+        helpMenu.add(statsMenuItem);
 
         menuBar.add(helpMenu);
 
@@ -107,11 +119,13 @@ public class MDIApplication extends javax.swing.JFrame {
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 709, Short.MAX_VALUE)
+            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 1542, Short.MAX_VALUE)
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(desktopPane, javax.swing.GroupLayout.DEFAULT_SIZE, 407, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addComponent(desktopPane, javax.swing.GroupLayout.PREFERRED_SIZE, 1004, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
 
         pack();
@@ -142,6 +156,20 @@ public class MDIApplication extends javax.swing.JFrame {
         desktopPane.add(pr);
         pr.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void lesInscriptionsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lesInscriptionsActionPerformed
+        // TODO add your handling code here:
+         InscriptionParEvenement ipe = new InscriptionParEvenement();
+        desktopPane.add(ipe);
+        ipe.setVisible(true);
+    }//GEN-LAST:event_lesInscriptionsActionPerformed
+
+    private void statsMenuItemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_statsMenuItemActionPerformed
+        // TODO add your handling code here:
+        Statistiques s = new Statistiques();
+        desktopPane.add(s);
+        s.setVisible(true);
+    }//GEN-LAST:event_statsMenuItemActionPerformed
 
     /**
      * @param args the command line arguments
@@ -179,8 +207,6 @@ public class MDIApplication extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JMenuItem aboutMenuItem;
-    private javax.swing.JMenuItem contentMenuItem;
     private javax.swing.JMenuItem cutMenuItem;
     private javax.swing.JDesktopPane desktopPane;
     private javax.swing.JMenu editMenu;
@@ -188,8 +214,10 @@ public class MDIApplication extends javax.swing.JFrame {
     private javax.swing.JMenu fileMenu;
     private javax.swing.JMenu helpMenu;
     private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem lesInscriptions;
     private javax.swing.JMenuBar menuBar;
     private javax.swing.JMenuItem participantMenuItem;
+    private javax.swing.JMenuItem statsMenuItem;
     // End of variables declaration//GEN-END:variables
 
 }

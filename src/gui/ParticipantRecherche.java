@@ -37,6 +37,12 @@ public class ParticipantRecherche extends javax.swing.JInternalFrame {
         stars.add("EL BENANNI Ahmded");
         stars.add("MORTAZIQI Loubna");
         stars.add("AIT AZIZ HASSAN");
+        stars.add("HAMDOUCH Imane");
+        stars.add("HAMOUCH Salma");
+        stars.add("RAHMANI Wissal");
+        stars.add("Shayli Aya");
+        stars.add("RAHLI Yassine");
+        stars.add("SQALI Nora");
 
         return stars;
     }

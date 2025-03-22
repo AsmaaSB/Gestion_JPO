@@ -5,15 +5,20 @@
         <group>
             <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/beans/Participant.java</file>
             <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/services/ParticipantService.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/gui/ParticipantForm.java</file>
             <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/gui/MDIApplication.java</file>
             <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/connexion/Connexion.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/gui/ParticipantByEvenement.java</file>
             <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/gui/Main.java</file>
             <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/gui/EvenementForm.java</file>
             <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/dao/IDao.java</file>
             <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/test/Test.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/dao/IUserDao.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/gui/ParticipantRecherche.java</file>
             <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/services/InscriptionEvenementService.java</file>
             <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/beans/Evenement.java</file>
             <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/services/EvenementService.java</file>
+            <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/services/UserService.java</file>
             <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/beans/User.java</file>
             <file>file:/C:/Users/PC/Documents/NetBeansProjects/Gestion_jpo/src/beans/InscriptionEvenement.java</file>
         </group>

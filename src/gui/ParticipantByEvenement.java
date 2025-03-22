@@ -11,6 +11,7 @@ import javax.swing.DefaultComboBoxModel;
 import javax.swing.table.DefaultTableModel;
 import services.EvenementService;
 import services.ParticipantService;
+import services.InscriptionEvenementService;
 
 /**
  *
@@ -20,6 +21,7 @@ public class ParticipantByEvenement extends javax.swing.JInternalFrame {
      
     private DefaultTableModel tableModel;
     private DefaultComboBoxModel<Evenement> comboModel;
+    
     
     private EvenementService es;
     private ParticipantService ps;
@@ -88,9 +90,9 @@ public class ParticipantByEvenement extends javax.swing.JInternalFrame {
                         .addGap(230, 230, 230)
                         .addComponent(jLabel1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(286, 286, 286)
+                        .addGap(280, 280, 280)
                         .addComponent(jLabel2)
-                        .addGap(27, 27, 27)
+                        .addGap(33, 33, 33)
                         .addComponent(listeEvenements, javax.swing.GroupLayout.PREFERRED_SIZE, 294, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(308, Short.MAX_VALUE))
         );
@@ -99,11 +101,11 @@ public class ParticipantByEvenement extends javax.swing.JInternalFrame {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addGap(93, 93, 93)
                 .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(62, 62, 62)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(listeEvenements, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(267, Short.MAX_VALUE))
+                .addContainerGap(216, Short.MAX_VALUE))
         );
 
         listeParticipant.setModel(new javax.swing.table.DefaultTableModel(
@@ -128,8 +130,7 @@ public class ParticipantByEvenement extends javax.swing.JInternalFrame {
             .addGroup(layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 319, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         pack();
@@ -137,8 +138,13 @@ public class ParticipantByEvenement extends javax.swing.JInternalFrame {
 
     private void listeEvenementsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_listeEvenementsActionPerformed
        tableModel.setRowCount(0);
-    if (listeEvenements.getSelectedIndex() != 0) {
-        for (Participant p : ps.findByEvenement((Evenement) listeEvenements.getSelectedItem())) {
+
+    // Ensure a valid event is selected (ignore the default choice)
+    if (listeEvenements.getSelectedIndex() > 0) {
+        Evenement selectedEvent = (Evenement) listeEvenements.getSelectedItem();
+        
+        // Retrieve participants based on the selected event
+        for (Participant p : ps.findByEvenement(selectedEvent)) {
             tableModel.addRow(new Object[]{
                 p.getId(),
                 p.getNom(),
@@ -146,7 +152,7 @@ public class ParticipantByEvenement extends javax.swing.JInternalFrame {
                 p.getEmail()
             });
         }
-    }     
+    }
     }//GEN-LAST:event_listeEvenementsActionPerformed
 
 

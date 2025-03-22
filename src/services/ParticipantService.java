@@ -16,6 +16,7 @@ import connexion.Connexion;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import beans.InscriptionEvenement;
 
 public class ParticipantService implements IDao<Participant> {
 
@@ -89,7 +90,7 @@ public class ParticipantService implements IDao<Participant> {
         }
         return null;
     }
-    
+
     @Override
     public List<Participant> findAll() {
         List<Participant> participants = new ArrayList<>();
@@ -103,10 +104,22 @@ public class ParticipantService implements IDao<Participant> {
         } catch (SQLException ex) {
             System.out.println(ex.getMessage());
         }
-        return participants; 
-  }
+        return participants;
+    }
 
-    public Iterable<Participant> findByEvenement(Evenement evenement) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List<Participant> findByEvenement(Evenement evenement) {
+        List<Participant> participants = new ArrayList<>();
+        String req = ("SELECT * FROM participants WHERE evenement_id = ?");
+        try {
+            PreparedStatement ps = connexion.getCn().prepareStatement(req);
+            ps.setInt(1, evenement.getId());
+            ResultSet rs = ps.executeQuery();
+            while (rs.next()) {
+                participants.add(new Participant(rs.getInt("id"), rs.getString("nom"), rs.getString("prenom"), rs.getString("email")));
+            }
+        } catch (SQLException ex) {
+            System.out.println(ex.getMessage());
+        }
+        return participants;
     }
 }
