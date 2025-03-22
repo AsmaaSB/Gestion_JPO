@@ -91,7 +91,6 @@ Git pour le contrôle de version
 
 # Demo Video :
 
-https://github.com/user-attachments/assets/82c78875-415f-472c-84c4-7cb393122231
 
 
 
