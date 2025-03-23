@@ -74,7 +74,7 @@ evenement_id INT NOT NULL,
 participant_id INT NOT NULL,
 PRIMARY KEY (evenement_id, participant_id),
 FOREIGN KEY (evenement_id) REFERENCES Evenement(id) ON DELETE CASCADE,
-FOREIGN KEY (participant_id) REFERENCES Participant(id) ON DELETE CASCADE,
+FOREIGN KEY (participant_id) REFERENCES Participant(id) ON DELETE CASCADE
 );
 
 CREATE TABLE user (
