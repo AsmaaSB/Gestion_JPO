@@ -87,30 +87,7 @@ CREATE TABLE user (
 
 ## Architecture :
 
- ### Couche Présentation (GUI)
-EvenementForm.java : Interface pour la gestion des événements
-ParticipantForm.java : Interface pour la gestion des participants
-InscriptionForm.java : Interface pour les inscriptions
-
-
-### Couche Métier (Services)
-EvenementService.java : Logique métier pour les événements
-ParticipantService.java : Logique métier pour les participants
-InscriptionService.java : Logique métier pour les inscriptions
-
-### Couche Entités (Modèles)
-Evenement.java : Entité représentant un événement
-Participant.java : Entité représentant un participant
-InscriptionEvenement.java : Entité associative
-
-### Couche Accès aux Données
-Connexion.java : Gestion des connexions à la base de données
-Services implémentant les opérations CRUD
-
-### Base de Données
-MySQL pour le stockage persistant des données
-
-<img width="554" alt="image" src="https://github.com/user-attachments/assets/b239e8a0-d1f8-43a5-acea-d69b2e119267" />
+![Couche Présentation](https://github.com/user-attachments/assets/7771f6de-18ce-4aac-ba75-e974e8d786f4)
 
 
 ## Technologies :
