@@ -13,10 +13,13 @@ import dao.IDao;
 import beans.Evenement;
 import beans.Participant;
 import connexion.Connexion;
+import gui.InscriptionParEvenement;
 import java.sql.*;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class EvenementService implements IDao<Evenement> {
 
@@ -107,7 +110,7 @@ public class EvenementService implements IDao<Evenement> {
     }
 
     public List<Evenement> findByParticipant(Participant participant) {
-       List<Evenement> evenements = new ArrayList<>();
+        List<Evenement> evenements = new ArrayList<>();
         String req = "SELECT e.* FROM Evenement e "
                 + "JOIN InscriptionEvenement ie ON e.id = ie.evenement_id "
                 + "WHERE ie.evenement_id = " + participant.getId();
