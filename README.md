@@ -72,7 +72,7 @@ email VARCHAR(100) NOT NULL UNIQUE
 CREATE TABLE InscriptionEvenement (
 evenement_id INT NOT NULL,
 participant_id INT NOT NULL,
- PRIMARY KEY (evenement_id, participant_id),
+PRIMARY KEY (evenement_id, participant_id),
 FOREIGN KEY (evenement_id) REFERENCES Evenement(id) ON DELETE CASCADE,
 FOREIGN KEY (participant_id) REFERENCES Participant(id) ON DELETE CASCADE,
 UNIQUE (evenement_id, participant_id) );
