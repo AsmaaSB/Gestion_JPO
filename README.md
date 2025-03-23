@@ -1,5 +1,23 @@
 # Projet de gestion des Journées Portes Ouvertes :
 
+  ## Sommaire :
+• Contexte 
+
+• Problématique 
+
+• Objectif 
+
+• Diagrammes 
+
+• Script Base de données 
+
+• Architecture 
+
+• Technologies 
+
+• Démonstration
+
+
   ## Contexte :
 L'organisation régulière de journées portes ouvertes est une pratique courante pour les établissements d'enseignement, les entreprises et diverses institutions souhaitant présenter leurs activités au public. Ces événements permettent aux visiteurs de découvrir les locaux, les services et de rencontrer les membres de l'organisation. Face au nombre croissant de participants et à la diversité des événements organisés, il devient nécessaire de mettre en place un système informatique efficace pour gérer les inscriptions et le suivi des participants.
 
@@ -28,7 +46,8 @@ L'organisation régulière de journées portes ouvertes est une pratique courant
 <img width="555" alt="image" src="https://github.com/user-attachments/assets/260bdf16-bec3-401d-986f-975a11cb2bc0" />
 
 ## Diagramme de Classe :
-<img width="380" alt="image" src="https://github.com/user-attachments/assets/2587c270-de63-45b3-94dc-7705691a48bb" />
+<img width="366" alt="image" src="https://github.com/user-attachments/assets/f9e9db21-2c44-4111-bddd-0e8064ec7aa5" />
+
 
 
 
