@@ -59,7 +59,7 @@ FOREIGN KEY (participant_id) REFERENCES Participant(id) ON DELETE CASCADE,
 UNIQUE (evenement_id, participant_id) );
 
 CREATE TABLE user (
-    login VARCHAR(50) NOT NULL UNIQUE,
+    login VARCHAR(50) PRIMARY KEY,
     password VARCHAR(255) NOT NULL,
 );
 
