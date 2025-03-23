@@ -28,7 +28,8 @@ L'organisation régulière de journées portes ouvertes est une pratique courant
 <img width="555" alt="image" src="https://github.com/user-attachments/assets/260bdf16-bec3-401d-986f-975a11cb2bc0" />
 
 ## Diagramme de Classe :
-<img width="345" alt="image" src="https://github.com/user-attachments/assets/a9147595-5553-4a2f-8237-f1389be72271" />
+<img width="380" alt="image" src="https://github.com/user-attachments/assets/2587c270-de63-45b3-94dc-7705691a48bb" />
+
 
 
 ## Script Base de données :
