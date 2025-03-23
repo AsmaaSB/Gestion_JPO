@@ -52,7 +52,7 @@ L'organisation régulière de journées portes ouvertes est une pratique courant
 
 
 ## Script Base de données :
-```bash
+```sql
 CREATE DATABASE gestion_jpo; USE gestion_jpo;
 
 CREATE TABLE Evenement (
