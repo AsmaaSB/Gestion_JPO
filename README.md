@@ -70,7 +70,6 @@ email VARCHAR(100) NOT NULL UNIQUE
 );
 
 CREATE TABLE InscriptionEvenement (
-id INT AUTO_INCREMENT PRIMARY KEY,
 evenement_id INT NOT NULL,
 participant_id INT NOT NULL,
 FOREIGN KEY (evenement_id) REFERENCES Evenement(id) ON DELETE CASCADE,
