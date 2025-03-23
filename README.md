@@ -92,23 +92,23 @@ CREATE TABLE user (
 
 ## Technologies :
 ### Langage de Programmation
-Java SE (Standard Edition)
+- Java SE (Standard Edition)
 
 ### Interface Graphique
-Java Swing pour les composants d'interface utilisateur
-JFrame, JPanel, JTable pour la construction des formulaires
-JDialog pour les boîtes de dialogue
+- Java Swing pour les composants d'interface utilisateur
+- JFrame, JPanel, JTable pour la construction des formulaires
+- JDialog pour les boîtes de dialogue
 
 ### Accès aux Données
-JDBC (Java Database Connectivity) pour la connexion à la base de données
-Requêtes SQL préparées pour la sécurité et l'efficacité
+- JDBC (Java Database Connectivity) pour la connexion à la base de données
+- Requêtes SQL préparées pour la sécurité et l'efficacité
 
 ### Base de Données
-MySQL pour le stockage relationnel des données
+- MySQL pour le stockage relationnel des données
 
 ### Outils de Développement
-NetBeans IDE pour le développement
-Git pour le contrôle de version 
+- NetBeans IDE pour le développement
+- Git pour le contrôle de version 
 
 
 # Demo Video :
