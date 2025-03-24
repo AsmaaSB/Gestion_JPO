@@ -17,6 +17,8 @@
 
 • Démonstration
 
+• .exe
+
 
   ## Contexte :
 L'organisation régulière de journées portes ouvertes est une pratique courante pour les établissements d'enseignement, les entreprises et diverses institutions souhaitant présenter leurs activités au public. Ces événements permettent aux visiteurs de découvrir les locaux, les services et de rencontrer les membres de l'organisation. Face au nombre croissant de participants et à la diversité des événements organisés, il devient nécessaire de mettre en place un système informatique efficace pour gérer les inscriptions et le suivi des participants.
@@ -116,4 +118,15 @@ CREATE TABLE user (
 
 https://github.com/user-attachments/assets/8ff3a45e-d818-43a8-b8a1-c8def5bb011e
 
+# .exe : 
+ ### Logo de l'application : 
+ 
+![event](https://github.com/user-attachments/assets/9e96c7ea-ba40-4a69-bbd4-ccc613ded9f3)
+
+![Fichier  exe](https://github.com/user-attachments/assets/b4016b30-d40a-422d-904b-d975d39dac07)
+
+
+### la vidéo de fonctionnement :
+
+https://github.com/user-attachments/assets/dd801ee8-2e6b-4edd-b679-41781c9133c5
 
