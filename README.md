@@ -15,9 +15,7 @@
 
 • Technologies 
 
-• Démonstration
-
-• .exe
+• Démonstration / .exe 
 
 
   ## Contexte :
@@ -116,16 +114,8 @@ CREATE TABLE user (
 
 # Demo Video :
 
-https://github.com/user-attachments/assets/8ff3a45e-d818-43a8-b8a1-c8def5bb011e
 
-# .exe : 
- ### Logo de l'application : 
- 
-![event](https://github.com/user-attachments/assets/9e96c7ea-ba40-4a69-bbd4-ccc613ded9f3)
-
-![Fichier  exe](https://github.com/user-attachments/assets/b4016b30-d40a-422d-904b-d975d39dac07)
+https://github.com/user-attachments/assets/097d4f25-96e4-4cb8-9dce-b8b1a962029f
 
 
-### la vidéo
 
-https://github.com/user-attachments/assets/49078474-9d18-48e1-85a6-310faf397e8e
