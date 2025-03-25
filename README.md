@@ -126,9 +126,6 @@ https://github.com/user-attachments/assets/8ff3a45e-d818-43a8-b8a1-c8def5bb011e
 ![Fichier  exe](https://github.com/user-attachments/assets/b4016b30-d40a-422d-904b-d975d39dac07)
 
 
-### la vidéo ( les étapes de création de l'exécutable .exe et de l'installateur + l'installation de l'application)
+### la vidéo
 
-
-
-https://github.com/user-attachments/assets/3246b39f-cfd1-4c1f-bb54-6f77e8090271
-
+https://github.com/user-attachments/assets/49078474-9d18-48e1-85a6-310faf397e8e
